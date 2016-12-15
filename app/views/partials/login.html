@@ -1,0 +1,54 @@
+<section>
+  <div class="container">
+  <div class="row">
+      
+    <div class="col-sm-4 offset-md-4">
+           <canvas id="canvas"></canvas>
+    </div>
+    
+    <div class="col-sm-4 offset-md-4">
+     
+        <div class="box">
+            
+            <form class="form" name="form" ng-submit="login(form)" novalidate> 
+                
+                 <!-- email -->  
+                <div class="group">
+
+                    <input type="email" name="email" class="inputMaterial" ng-model="user.email" autofocus/>
+                     <span class="highlight"></span>
+                     <span class="bar"></span>
+                     <label> Email </label>
+                        
+                </div>          
+                    
+                <!-- Password --> 
+                <div class="group">
+
+                      <input type="password" name="password" class="inputMaterial" ng-model="user.password"/>
+
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Password</label>                        
+                      
+                </div>
+                    
+                <div class="form has-error">
+                    <p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && submitted">Please enter your email and password.</p>
+                    <p class="help-block">{{ errors.other }}</p>
+                </div>
+                    
+                <button type="submit" class="btn btn-lg btn-primary"> Login </button>
+              
+            </form>
+            <a  href="/signup"> Sign up </a>
+            
+        </div>
+        
+    </div>
+      
+  </div>
+</div>   
+</section>
+
+

@@ -1,0 +1,139 @@
+<section>
+    <div class="container">
+            <div class="row">
+
+                <div class="col-sm-4 offset-md-4">
+                       <canvas id="canvas"></canvas>
+                </div>
+
+                <div class="col-sm-4 offset-md-4">
+                    
+                        <form class="form" name="form" ng-submit="register(form)" novalidate>
+                              <div classe="box">
+
+                                    <!-- name -->  
+                                    <div class="group" ng-class="{ 'has-success': form.name.$valid && submitted,
+                                                                        'has-error': form.name.$invalid && submitted }" autofocus>
+
+                                          <input type="text" name="name" class="inputMaterial" ng-model="user.name"
+                                                 required
+                                                 mongoose-error
+                                                 autofocus/>
+
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label> Name </label>
+
+                                          <p class="help-block" ng-show="form.name.$error.required && submitted">A name is required</p>
+                                          <p class="help-block" ng-show="form.name.$error.mongoose">{{ errors.name }}</p>
+
+                                    </div>
+
+                                   <!-- Full name -->  
+                                    <div class="group" ng-class="{ 'has-success': form.fullname.$valid && submitted,
+                                                                        'has-error': form.fullname.$invalid && submitted }">
+
+                                          <input type="text" name="fullname" class="inputMaterial" ng-model="user.fullname"
+                                                 required
+                                                 mongoose-error
+                                                 autofocus/>
+
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label> Fullname </label>
+
+                                          <p class="help-block" ng-show="form.fullname.$error.required && submitted">Full name is required</p>
+                                          <p class="help-block" ng-show="form.fullname.$error.mongoose">{{ errors.fullname }}</p>
+
+                                    </div>
+
+                                    <!-- email -->  
+                                    <div class="group" ng-class="{ 'has-success': form.email.$valid && submitted,
+                                                                        'has-error': form.email.$invalid && submitted }">
+
+                                          <input type="email" name="email" class="inputMaterial" ng-model="user.email"
+                                                 required
+                                                 mongoose-error
+                                                 autofocus/>
+                                           <span class="highlight"></span>
+                                           <span class="bar"></span>
+                                           <label> Email </label>
+
+                                          <p class="help-block" ng-show="form.email.$error.email && submitted">Doesn't look like a valid email.</p>
+                                          <p class="help-block" ng-show="form.email.$error.required && submitted">What's your email address?</p>
+                                          <p class="help-block" ng-show="form.email.$error.mongoose">{{ errors.email }}</p>
+
+                                    </div>
+
+                                    <!-- Repeat email --> 
+                                    <div class="group" ng-class="{ 'has-success': form.email.$valid && submitted,
+                                                                        'has-error': form.email.$invalid && submitted }">
+
+                                          <input type="email" name="email" class="inputMaterial" ng-model="user.email"
+                                                 required
+                                                 mongoose-error
+                                                 autofocus/>
+                                           <span class="highlight"></span>
+                                           <span class="bar"></span>
+                                           <label> Repeat Email </label>
+
+                                          <p class="help-block" ng-show="form.email.$error.email && submitted">Doesn't look like a valid email.</p>
+                                          <p class="help-block" ng-show="form.email.$error.required && submitted">What's your email address?</p>
+                                          <p class="help-block" ng-show="form.email.$error.mongoose">{{ errors.email }}</p>                          
+                                    </div>
+
+                                    <!-- Password --> 
+                                    <div class="group" ng-class="{ 'has-success': form.password.$valid && submitted,
+                                                                        'has-error': form.password.$invalid && submitted }">
+
+                                      <input type="password" name="password" class="inputMaterial" ng-model="user.password"
+                                             ng-minlength="3"
+                                             required
+                                             mongoose-error
+                                             autofocus/>
+
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label>Password</label>
+
+                                      <p class="help-block" ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted"> Password must be at least 3 characters.</p>
+                                      <p class="help-block" ng-show="form.password.$error.mongoose">{{ errors.password }}</p>
+
+                                    </div>
+
+                                     
+
+
+                                   <!-- Company -->  
+                                    <div class="group" ng-class="{ 'has-success': form.company.$valid && submitted,
+                                                                        'has-error': form.company.$invalid && submitted }">
+
+                                          <input type="text" name="company" class="inputMaterial" ng-model="user.company"
+                                                 required
+                                                 mongoose-error
+                                                 autofocus/>
+
+                                            <span class="highlight"></span>
+                                            <span class="bar"></span>
+                                            <label> Company </label>
+
+                                          <p class="help-block" ng-show="form.company.$error.required && submitted">A company is required</p>
+                                          <p class="help-block" ng-show="form.company.$error.mongoose">{{ errors.company }}</p>
+
+                                    </div>
+
+                                    <button type="submit" class="btn btn-lg btn-primary"> Sign up </button>
+                                    
+                                </div>
+                              
+                              
+                    </form>
+                             
+                    
+                    <a href="/login" > Login </a>   
+                 </div>
+
+            </div>
+    </div>
+</section>
+

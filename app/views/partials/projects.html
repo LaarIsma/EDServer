@@ -1,0 +1,53 @@
+<section>
+<div ng-include="'partials/navbar'"></div>
+  <div class="col-sm-6 offset-md-4">
+    <div class="row">
+        
+        <div class="text-center">
+			<h3>Projects: <span class="label label-success">{{ projects.length }}</span></h3>
+		</div>
+      
+        <div  class="col-sm-6 col-sm-offset-4 text-center">
+            <table class="table table-condensed">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Users</th>
+                        <th>Company</th>  
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="project in projects" ng-click="SelectProject(project)">
+                        <td>{{ project.name }}</td>
+                        <td>{{ project.users_id }}</td>
+                        <td>{{ project.company_id }}</td>
+                      </tr>
+                    </tbody>
+            </table>
+        </div>
+       
+      <div class="col-sm-8 col-sm-offset-4 text-center">
+                <h3> Add Project </h3> 
+				<form class="form" name="form"  novalidate>
+					<div class="form-group">
+						<input type="text" class="form-control input-lg text-center" placeholder="Name" ng-model="newProject.name" required>
+						<br>
+						<input type="text" class="form-control input-lg text-center" placeholder="Users" ng-model="newProject.users_id" required>
+                        <br>
+                        <input type="text" class="form-control input-lg text-center" placeholder="Company" ng-model="newProject.company_id" required>
+                        <br>
+					</div>
+
+					<!-- Add Project -->
+					<button class="btn btn-lg btn-primary" type="submit" ng-click="AddProject(form)">Add Project</button>
+                    <button type="submit" class="btn btn-warning btn-lg" ng-click="EditProject(newProject)" ng-disabled="!newProject.name || !newProject.users_id || !selected">Edit</button>
+                    <button type="submit" class="btn btn-warning btn-lg" ng-click="DeleteProject(newProject)" ng-disabled="!newProject.name || !newProject.users_id || !selected">Delete</button>
+				</form>
+        </div>
+      </div>  
+    
+    <div class="col-sm-4 offset-md-4">
+        <a href="chat"> Chat </a>
+    </div>
+</div>
+</section>

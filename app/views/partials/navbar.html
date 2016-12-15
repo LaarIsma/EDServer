@@ -1,0 +1,12 @@
+<header ng-controller="NavbarCtrl">
+  <div class="col-sm-4 offset-md-4">
+
+      <h1>Ed Technology</h1>
+      
+      <div class="col-sm-8 offset-md-8">
+          <a href="/" ng-show="Auth.isLoggedIn()">Home</a>    
+          <a href="/settings" ng-show="Auth.isLoggedIn()">Settings</a>
+          <a href="" ng-click="logout()" ng-show="Auth.isLoggedIn()">Logout</a>
+      </div>
+   </div>
+</header>

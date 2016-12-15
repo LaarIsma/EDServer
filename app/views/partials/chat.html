@@ -1,0 +1,42 @@
+<section>
+<div ng-include="'partials/navbar'"></div>
+  <div class="col-sm-4 offset-md-4">
+    <div class="row">
+        
+      <!--<section auto-scroll="event:scroll">-->
+        <div id="target" style="overflow: scroll; width: 600px; height: 400px;">
+        <ul>
+          <li ng-repeat="message in getMessages()">
+            <img ng-src="{{ message.author.profileImg }}" height="42" width="42">
+            <div>
+              <p>{{ message.author.name }}</p>
+              <p>{{ message.date | date: 'h:mm' }}</p>
+              <p>{{ message.body }}</p>
+            </div>
+          </li>
+        </ul>
+        </div>
+    <!-- </section> -->
+        
+      <div>
+        <form ng-submit="sendMessage()">
+          <input placeholder="Type your message here..." ng-model="newMessage" ng-trim="false" autofocus>
+        </form>
+      </div>
+        
+    </div>
+      
+    <div class="row">
+      <ul>
+        <li ng-repeat="visitor in getVisitors()">
+          <img ng-src="{{ visitor.profileImg }} " height="42" width="42">
+          <div>{{ visitor.name }}</div>
+        </li>
+      </ul>
+    </div>
+  </div>    
+    
+    <div class="col-sm-4 offset-md-4">
+        <a href="/"> Projects </a>
+    </div>
+</section>
